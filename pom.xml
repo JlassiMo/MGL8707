@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>uqam-8707-project</groupId>
+    <artifactId>profile-management</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <assertj-core.version>3.24.2</assertj-core.version>
+        <bnc.app.description>client management api test</bnc.app.description>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <commons-codec.version>1.17.1</commons-codec.version>
+        <commons-io.version>2.14.0</commons-io.version>
+        <commons-text.version>1.10.0</commons-text.version>
+        <everit-json-schema.version>1.14.4</everit-json-schema.version>
+        <jackson-annotations.version>2.15.2</jackson-annotations.version>
+        <jackson-core.version>2.15.2</jackson-core.version>
+        <jackson-databind.version>2.15.2</jackson-databind.version>
+        <java-jwt.version>4.4.0</java-jwt.version>
+        <java.version>17</java.version>
+        <json.version>20240303</json.version>
+        <jsonsimple.version>1.1.1</jsonsimple.version>
+        <log4j.version>2.21.0</log4j.version>
+        <lombok.version>1.18.32</lombok.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <rb-java.version>1.0.0</rb-java.version>
+        <rest-assured.version>5.5.1</rest-assured.version>
+        <squareup-okio.version>3.9.0</squareup-okio.version>
+        <testng.version>7.8.0</testng.version>
+        <xray-maven-plugin.version>0.7.4</xray-maven-plugin.version>
+        <rest-assured.version>5.5.0</rest-assured.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-codec</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons-beanutils.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson-annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.erosb</groupId>
+            <artifactId>everit-json-schema</artifactId>
+            <version>${everit-json-schema.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>${commons-text.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>app.getxray</groupId>
+            <artifactId>xray-maven-plugin</artifactId>
+            <version>${xray-maven-plugin.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.squareup.okio</groupId>
+                    <artifactId>okio</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-stdlib</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okio</groupId>
+            <artifactId>okio</artifactId>
+            <version>${squareup-okio.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${java-jwt.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Surefire Plugin for TestNG -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/Test*.java</include>
+                    </includes>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>org.testng.reporters.XMLReporter</value>
+                        </property>
+                    </properties>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.testng</groupId>
+                        <artifactId>testng</artifactId>
+                        <version>${testng.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!-- Xray Maven Plugin for reporting tests to JIRA -->
+<!--            <plugin>-->
+<!--                <groupId>app.getxray</groupId>-->
+<!--                <artifactId>xray-maven-plugin</artifactId>-->
+<!--                <version>${xray-maven-plugin.version}</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>verify</phase> &lt;!&ndash; This phase uploads the report after tests are run &ndash;&gt;-->
+<!--                        <goals>-->
+<!--                            <goal>results</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; JIRA connection and report configuration &ndash;&gt;-->
+<!--                    <endpoint>https://xray.cloud.getxray.app/api/v2</endpoint> &lt;!&ndash; Replace with your Xray instance URL &ndash;&gt;-->
+<!--                    <clientId>${xray.clientId}</clientId> &lt;!&ndash; Replace with your JIRA client ID &ndash;&gt;-->
+<!--                    <clientSecret>${xray.clientSecret}</clientSecret> &lt;!&ndash; Replace with your JIRA client secret &ndash;&gt;-->
+<!--                    <testExecKey>TEST_EXEC_KEY</testExecKey> &lt;!&ndash; Replace with your JIRA test execution key &ndash;&gt;-->
+<!--                    <testPlanKey>TEST_PLAN_KEY</testPlanKey> &lt;!&ndash; Optional: If you want to associate with a test plan &ndash;&gt;-->
+<!--                    <projectKey>PROJECT_KEY</projectKey> &lt;!&ndash; Replace with your JIRA project key &ndash;&gt;-->
+<!--                    <importFilePath>target/surefire-reports/testng-results.xml</importFilePath> &lt;!&ndash; TestNG report path &ndash;&gt;-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+       </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+</project>
