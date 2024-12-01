@@ -12,7 +12,7 @@
       "message": "Username updated successfully."
     }
   },
-  "Update password payload": {
+  "Update Password": {
     "as-json-update-password-payload": {
       "id": "uqam-12345",
       "oldPassword": "OldPassword123!",

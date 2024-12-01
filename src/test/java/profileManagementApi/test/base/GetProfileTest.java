@@ -10,7 +10,6 @@ public class GetProfileTest extends ProfileManagementBaseTest {
     @Test
     @DependentStep
     public void t002_Get_Profile() {
-
         try {
 
         } catch (Exception ex) {

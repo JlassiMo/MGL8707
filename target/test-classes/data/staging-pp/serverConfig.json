@@ -1,12 +1,10 @@
 {
   "Client Management Base Url": {
-    "ProfileManagementBaseUrl": ""
+    "ProfileManagementBaseUrl": "http://localhost:8081"
   },
-  "Get Tpps End Point": {
-    "create_profile": "${ProfileManagementBaseUrl}",
-    "get_profile": "${ProfileManagementBaseUrl}",
-    "delete_profile": "${ProfileManagementBaseUrl}",
-    "update_username": "${ProfileManagementBaseUrl}",
-    "update_password": "${ProfileManagementBaseUrl}"
+  "Get Profile Management End Points": {
+    "get_profile": "${ProfileManagementBaseUrl}/api/v1/student/${studentID}/profile",
+    "update_username": "${ProfileManagementBaseUrl}/api/v1/student/${studentID}/username",
+    "update_password": "${ProfileManagementBaseUrl}/api/v1/student/${studentID}/password"
   }
 }

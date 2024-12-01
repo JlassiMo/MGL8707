@@ -5,13 +5,7 @@
   },
   "response": {
     "status": 200,
-    "body": {
-      "id": "uqam-12345",
-      "oldUsername": "johndoe",
-      "newUsername": "john.doe",
-      "updateStatus": "success",
-      "message": "Username updated successfully."
-    },
+    "body": "{\"id\": \"uqam-12345\", \"oldUsername\": \"johndoe\", \"newUsername\": \"john.doe\", \"updateStatus\": \"success\", \"message\": \"Username updated successfully.\"}",
     "headers": {
       "Content-Type": "application/json"
     }
