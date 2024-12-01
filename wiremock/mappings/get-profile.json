@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/api/v1/student/uqam-12345/profile"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": "uqam-12345",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@uqam.ca",
+      "creationDate": "2022-08-15T10:30:00Z",
+      "lastUpdated": "2024-11-28T16:30:00Z"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
+

@@ -1,0 +1,10 @@
+{
+  "Client Management Base Url": {
+    "ProfileManagementBaseUrl": ""
+  },
+  "Get Profile Management End Points": {
+    "get_profile": "${ProfileManagementBaseUrl}",
+    "update_username": "${ProfileManagementBaseUrl}",
+    "update_password": "${ProfileManagementBaseUrl}"
+  }
+}

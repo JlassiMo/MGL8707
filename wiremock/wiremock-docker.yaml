@@ -1,0 +1,23 @@
+wiremock:
+  image: "wiremock/wiremock:latest"
+  container_name: wiremock
+  command: --verbose --port 8081
+  platform: linux/amd64
+  ports:
+    - "8081:8081"
+  volumes:
+    - type: bind
+      source: ./wiremock/data
+      target: /home/wiremock
+  logging:
+    driver: json-file
+    options:
+      max-size: "200k"
+      max-file: "10"
+
+  healthcheck:
+    test: [ "CMD", "curl", "--fail", "http://localhost:8081/__admin/health" ]
+    interval: 50s
+    timeout: 10s
+    retries: 5
+    start_period: 20s

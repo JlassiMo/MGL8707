@@ -1,0 +1,12 @@
+{
+  "Client Management Base Url": {
+    "ProfileManagementBaseUrl": ""
+  },
+  "Get Tpps End Point": {
+    "create_profile": "${ProfileManagementBaseUrl}",
+    "get_profile": "${ProfileManagementBaseUrl}",
+    "delete_profile": "${ProfileManagementBaseUrl}",
+    "update_username": "${ProfileManagementBaseUrl}",
+    "update_password": "${ProfileManagementBaseUrl}"
+  }
+}
