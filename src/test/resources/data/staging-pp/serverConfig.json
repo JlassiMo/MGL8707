@@ -1,5 +1,5 @@
 {
-  "Client Management Base Url": {
+  "Profile Management Base Url": {
     "ProfileManagementBaseUrl": "http://localhost:8081"
   },
   "Get Profile Management End Points": {

@@ -1,6 +1,6 @@
 {
   "Get Student Profile Response": {
-    "as-json-student-profile-request-response": {
+    "as-json-get-student-profile-response-body": {
       "id": "uqam-12345",
       "username": "johndoe",
       "email": "johndoe@example.com",

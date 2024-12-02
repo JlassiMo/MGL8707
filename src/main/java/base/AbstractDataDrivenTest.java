@@ -4,10 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.Listeners;
+import utils.RestClient;
 
+@Listeners(listener.TestngListener.class)
 public abstract class AbstractDataDrivenTest {
     protected final Logger logger = LogManager.getLogger(this.getClass().getName());
     protected Map<String, String> testData = new HashMap<>();
+    private static RestClient restClient;
     private static ThreadLocal<Map<String, Object>> worldLocal = new ThreadLocal<>();
 
     public static <E extends Enum<E>> void pushToTheWorld(E key, Object value) {
@@ -41,5 +45,16 @@ public abstract class AbstractDataDrivenTest {
 
     public enum WorldKey {
         RAW_RESPONSE, ACTUAL_RESPONSE, EXPECTED_RESPONSE, ROBOT_TOKEN, TEST_DATA, CLIENT_ID, CONTEXT
+    }
+    // Protected getter to allow subclasses to access the RestClient
+    protected RestClient getRestClient() {
+        if (restClient == null) {
+            synchronized (AbstractDataDrivenTest.class) {
+                if (restClient == null) {
+                    restClient = new RestClient();
+                }
+            }
+        }
+        return restClient;
     }
 }

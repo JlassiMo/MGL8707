@@ -1,12 +1,44 @@
 {
   "Validate get profile": [
-
-
+    {
+      "users.json": [
+        "student001"
+      ],
+      "serverConfig.json": [
+        "Profile Management Base Url",
+        "Get Profile Management End Points"
+      ],
+      "studentProfile.json": [
+        "Get Student Profile Response"
+      ]
+    }
   ],
   "Validate update password": [
-
+    {
+      "users.json": [
+        "student001"
+      ],
+      "serverConfig.json": [
+        "Profile Management Base Url",
+        "Get Profile Management End Points"
+      ],
+      "updateProfile.json": [
+        "Update Password"
+      ]
+    }
   ],
   "Validate update username": [
-
+    {
+      "users.json": [
+        "student001"
+      ],
+      "serverConfig.json": [
+        "Client Management Base Url",
+        "Get Profile Management End Points"
+      ],
+      "updateProfile.json": [
+        "Update Username"
+      ]
+    }
   ]
 }

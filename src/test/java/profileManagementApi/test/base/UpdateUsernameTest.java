@@ -1,19 +1,14 @@
 package profileManagementApi.test.base;
 
-import profileManagementApi.pretest.ProfileManagementBaseTest;
 import annotation.DependentStep;
-import environment.Environment;
+import base.AbstractDataDrivenTest;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 import xray.Xray;
 
-import java.util.Iterator;
-
 @Xray(requirement = "IAME-14496")
 @Test(groups = {"integration", "nonregression"})
-public class UpdateUsernameTest extends ProfileManagementBaseTest {
+public class UpdateUsernameTest extends AbstractDataDrivenTest {
 
     @Test
     @DependentStep

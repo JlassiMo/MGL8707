@@ -5,8 +5,7 @@
   },
   "response": {
     "status": 200,
-    "body": "{\"id\": \"uqam-12345\", \"firstName\": \"John\", \"lastName\": \"Doe\", \"email\": \"john.doe@uqam.ca\", \"creationDate\": \"2022-08-15T10:30:00Z\", \"lastUpdated\": \"2024-11-28T16:30:00Z\"}",
-
+    "body": "{\"id\":\"uqam-12345\",\"username\":\"johndoe\",\"email\":\"johndoe@example.com\",\"fullName\":\"John Doe\",\"enrolledCourses\":[\"Computer Science 101\",\"Mathematics 201\",\"Physics 301\"],\"profileCreationDate\":\"2022-01-15T10:30:00Z\",\"lastLogin\":\"2024-11-27T18:45:00Z\",\"accountStatus\":\"active\",\"preferences\":{\"language\":\"en\",\"timezone\":\"America/New_York\",\"emailNotifications\":true},\"personalDetails\":{\"age\":23,\"gender\":\"Male\",\"address\":{\"street\":\"123 Elm Street\",\"city\":\"Springfield\",\"province\":\"QC\",\"postalCode\":\"62701\",\"country\":\"CA\"}}}",
     "headers": {
       "Content-Type": "application/json"
     }
