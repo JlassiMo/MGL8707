@@ -12,7 +12,9 @@
             </define>
         </groups>
         <classes>
-
+            <class name="profileManagementApi.test.happyPath.ValidateGetProfileTest"/>
+            <class name="profileManagementApi.test.happyPath.ValidateUpdatePasswordTest"/>
+            <class name="profileManagementApi.test.happyPath.ValidateUpdateUsernameTest"/>
         </classes>
     </test>
 </suite>

@@ -31,11 +31,9 @@ profile-management/
 │       └── java/
 │           └── api/
 │               ├── ApiTest.java        # Main test class for API tests
-│               ├── TokenManager.java   # Class for managing access tokens
-│               ├── DataProviderUtil.java # Class for data-driven testing
+│       
 ├── data/                    # JSON files for test data
 │   └── testdata.json        # Test data for data-driven tests
-├── secrets/                 # Directory to store encrypted/secured credentials (if needed)
 ├── target/                  # Generated files after compilation
 └── reports/                 # Test reports generated after execution
 ```
@@ -64,18 +62,6 @@ Maven will automatically manage dependencies. Ensure you have Maven installed, a
 mvn clean install
 ```
 
-### 3. Configure Access Token and Secrets
-
-Sensitive data such as access tokens, API keys, or credentials should be securely stored in the `secrets/` folder. You can retrieve them programmatically using a secure storage mechanism.
-
-For now, set the access token in the `TokenManager.java`:
-
-```java
-private String accessToken = "your-access-token-here";
-```
-
-In a production environment, manage secrets using environment variables, or integrate with secure vault services like **AWS Secrets Manager** or **HashiCorp Vault**.
-
 ## Test Execution
 
 ### Grouped Test Execution
@@ -83,14 +69,14 @@ In a production environment, manage secrets using environment variables, or inte
 To execute tests by groups (e.g., smoke, regression), use the following Maven command:
 
 ```bash
-mvn test -Dgroups="smoke"
+mvn test -Dgroups="regression"
 ```
 
 You can organize your tests into various groups by using the `@Test` annotation in TestNG:
 
 ```java
-@Test(groups = { "smoke" })
-public void testGetUserProfile() {
+@Test(groups = { "regression" })
+public validateGetUserProfile() {
     // Test code here
 }
 ```
@@ -105,13 +91,11 @@ Example JSON (`testdata.json`):
 [
   {
     "userId": 1,
-    "userName": "testuser1",
-    "expectedStatusCode": 200
+    "userName": "testuser1"
   },
   {
     "userId": 2,
-    "userName": "testuser2",
-    "expectedStatusCode": 404
+    "userName": "testuser2"
   }
 ]
 ```
@@ -184,7 +168,7 @@ Test results and logs will be output in the `target/surefire-reports/` folder, a
 - **TestNG**: Testing framework for organizing test cases.
 - **Maven**: Dependency management and build tool.
 - **JSON**: Data-driven testing input format.
-- **Docker Desktop**: Optional, for running API mocks or external dependencies.
+- **Docker Desktop**: For running API mocks or external dependencies.
 
 ## Future Improvements
 

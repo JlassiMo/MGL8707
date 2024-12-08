@@ -195,31 +195,15 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-            <!-- Xray Maven Plugin for reporting tests to JIRA -->
-<!--            <plugin>-->
-<!--                <groupId>app.getxray</groupId>-->
-<!--                <artifactId>xray-maven-plugin</artifactId>-->
-<!--                <version>${xray-maven-plugin.version}</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>verify</phase> &lt;!&ndash; This phase uploads the report after tests are run &ndash;&gt;-->
-<!--                        <goals>-->
-<!--                            <goal>results</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    &lt;!&ndash; JIRA connection and report configuration &ndash;&gt;-->
-<!--                    <endpoint>https://xray.cloud.getxray.app/api/v2</endpoint> &lt;!&ndash; Replace with your Xray instance URL &ndash;&gt;-->
-<!--                    <clientId>${xray.clientId}</clientId> &lt;!&ndash; Replace with your JIRA client ID &ndash;&gt;-->
-<!--                    <clientSecret>${xray.clientSecret}</clientSecret> &lt;!&ndash; Replace with your JIRA client secret &ndash;&gt;-->
-<!--                    <testExecKey>TEST_EXEC_KEY</testExecKey> &lt;!&ndash; Replace with your JIRA test execution key &ndash;&gt;-->
-<!--                    <testPlanKey>TEST_PLAN_KEY</testPlanKey> &lt;!&ndash; Optional: If you want to associate with a test plan &ndash;&gt;-->
-<!--                    <projectKey>PROJECT_KEY</projectKey> &lt;!&ndash; Replace with your JIRA project key &ndash;&gt;-->
-<!--                    <importFilePath>target/surefire-reports/testng-results.xml</importFilePath> &lt;!&ndash; TestNG report path &ndash;&gt;-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <!-- Surefire Report Plugin for HTML Reports -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/surefire-reports</outputDirectory>
+                </configuration>
+            </plugin>
        </plugins>
 
         <resources>
@@ -229,4 +213,14 @@
             </resource>
         </resources>
     </build>
+    <reporting>
+        <plugins>
+            <!-- Surefire Report Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

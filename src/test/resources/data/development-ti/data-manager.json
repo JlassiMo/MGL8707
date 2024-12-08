@@ -15,9 +15,6 @@
   ],
   "Validate update password": [
     {
-      "users.json": [
-        "student001"
-      ],
       "serverConfig.json": [
         "Profile Management Base Url",
         "Get Profile Management End Points"
@@ -29,11 +26,8 @@
   ],
   "Validate update username": [
     {
-      "users.json": [
-        "student001"
-      ],
       "serverConfig.json": [
-        "Client Management Base Url",
+        "Profile Management Base Url",
         "Get Profile Management End Points"
       ],
       "updateProfile.json": [

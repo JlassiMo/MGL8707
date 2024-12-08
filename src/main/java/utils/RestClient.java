@@ -41,9 +41,9 @@ public class RestClient extends AbstractDataDrivenTest {
         return response;
     }
 
-    public Response put(final String uriPath, final String json, final String jwt, String context) {
+    public Response put(final String uriPath, final String json) {
 
-        Response response = given().auth().oauth2(jwt).accept(ContentType.JSON)
+        Response response = given().accept(ContentType.JSON)
                 .contentType(ContentType.JSON).log().all().body(json).when()
                 .header(ACCEPT_LANGUAGE, "fr")
                 .header(ACCEPT_VERSION, VERSION)

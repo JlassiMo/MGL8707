@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "PUT",
-    "urlPathPattern": "/api/v1/student/uqam-.*/username"
+    "urlPathPattern": "/api/v1/student/username"
   },
   "response": {
     "status": 200,

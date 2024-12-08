@@ -4,7 +4,7 @@
   },
   "Get Profile Management End Points": {
     "get_profile": "${ProfileManagementBaseUrl}/api/v1/student/${student_id}/profile",
-    "put_username": "${ProfileManagementBaseUrl}/api/v1/student/${student_id}/username",
-    "put_password": "${ProfileManagementBaseUrl}/api/v1/student/${student_id}/password"
+    "put_username": "${ProfileManagementBaseUrl}/api/v1/student/username",
+    "put_password": "${ProfileManagementBaseUrl}/api/v1/student/password"
   }
 }

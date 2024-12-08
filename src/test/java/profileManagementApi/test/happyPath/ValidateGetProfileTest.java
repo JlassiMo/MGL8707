@@ -20,7 +20,7 @@ import java.util.Map;
 
 import static org.testng.Assert.fail;
 
-@Xray(requirement = "IAME-14497")
+@Xray(requirement = "UQAM-14497")
 @Test(groups = {"integration", "nonregression"})
 public class ValidateGetProfileTest extends GetProfileTest {
 

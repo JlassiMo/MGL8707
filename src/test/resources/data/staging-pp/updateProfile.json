@@ -1,10 +1,10 @@
 {
   "Update Username": {
-    "as-update-username-request-payload": {
+    "as-json-update-username-request-payload": {
       "id": "uqam-12345",
       "newUsername": "john.doe"
     },
-    "as-json-update-username-response": {
+    "as-json-update-username-response-body": {
       "id": "uqam-12345",
       "oldUsername": "johndoe",
       "newUsername": "john.doe",
@@ -13,12 +13,12 @@
     }
   },
   "Update Password": {
-    "as-json-update-password-payload": {
+    "as-json-update-password-request-payload": {
       "id": "uqam-12345",
       "oldPassword": "OldPassword123!",
       "newPassword": "NewPassword456!"
     },
-    "as-json-update-password-response": {
+    "as-json-update-password-response-body": {
       "id": "uqam-12345",
       "updateStatus": "success",
       "message": "Password updated successfully."
