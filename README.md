@@ -1,7 +1,4 @@
 # MGL8707
-Here is the improved version of the `README.md` for your project, "Profile Management," focusing on the framework features, assertion validation, test execution with groups, managing secret data, and data-driven testing using JSON files:
-
----
 
 # Profile Management - API Test Automation Framework
 
