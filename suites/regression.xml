@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Suite profile management API tests"  group-by-instances="true">
+<suite name="Test Suite Profile Management API Tests"  group-by-instances="true">
     <listeners>
         <listener class-name="listener.TestngListener"/>
     </listeners>
-    <test name="Test Suite Client Management Tpps">
+    <test name="Test Suite Profile Management">
         <groups>
             <define name="all">
                 <include name="integration"/>
-                <include name="nonregression"/>
+                <include name="regression"/>
             </define>
         </groups>
         <classes>

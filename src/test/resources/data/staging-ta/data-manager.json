@@ -11,6 +11,18 @@
       "studentProfile.json": [
         "Get Student Profile Response"
       ]
+    },
+    {
+      "users.json": [
+        "student002"
+      ],
+      "serverConfig.json": [
+        "Profile Management Base Url",
+        "Get Profile Management End Points"
+      ],
+      "studentProfile.json": [
+        "Get Student Profile Response"
+      ]
     }
   ],
   "Validate update password": [

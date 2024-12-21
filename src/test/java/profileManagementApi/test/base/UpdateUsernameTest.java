@@ -9,12 +9,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.HttpStatus;
 import utils.Validate;
-import xray.Xray;
 
 import java.util.Map;
 
-@Xray(requirement = "IAME-14496")
-@Test(groups = {"integration", "nonregression"})
 public class UpdateUsernameTest extends AbstractDataDrivenTest {
 
     @Test
@@ -26,10 +23,8 @@ public class UpdateUsernameTest extends AbstractDataDrivenTest {
             TestData tdServerConfig = new TestData(testData).from("serverConfig.json");
             String urlTemplate = tdServerConfig.forIndex(2).getForKey("put_username");
 
-
             // Validate that url is not null
             Validate.Objects.isNotNull(urlTemplate, "urlTemplate is not null");
-
 
             // Build the API endpoint for get profile
             String endPoint = getRestClient().getApiUrl(urlTemplate, Map.of("ProfileManagementBaseUrl", tdServerConfig.forIndex(1).getForKey("ProfileManagementBaseUrl")));

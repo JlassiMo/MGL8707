@@ -3,7 +3,6 @@ package models;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.ZonedDateTime;
 import java.util.List;
 
 @Getter
@@ -14,8 +13,8 @@ public class StudentProfileResponse {
     private String email;
     private String fullName;
     private List<String> enrolledCourses;
-    private String  profileCreationDate;
-    private String  lastLogin;
+    private String profileCreationDate;
+    private String lastLogin;
     private String accountStatus;
     private Preferences preferences;
     private PersonalDetails personalDetails;

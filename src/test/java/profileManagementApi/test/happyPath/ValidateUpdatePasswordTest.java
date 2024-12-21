@@ -1,17 +1,15 @@
 package profileManagementApi.test.happyPath;
 
+import annotation.DependentStep;
 import data.TestData;
+import environment.Environment;
 import io.restassured.response.Response;
 import models.PasswordUpdateResponse;
-import models.StudentProfileResponse;
-import models.UsernameUpdateResponse;
 import org.json.JSONObject;
-import profileManagementApi.test.base.UpdatePasswordTest;
-import annotation.DependentStep;
-import environment.Environment;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
+import profileManagementApi.test.base.UpdatePasswordTest;
 import utils.ApiGeneric;
 import utils.AssertionHelper;
 import utils.Validate;
@@ -22,10 +20,10 @@ import java.util.Map;
 
 import static org.testng.Assert.fail;
 
-@Test(groups = {"integration", "nonregression"})
+@Test(groups = {"integration", "regression"})
 @Xray(requirement = "UQAM-14494")
 public class ValidateUpdatePasswordTest extends UpdatePasswordTest {
-    private static final String testId = "Validate update password";
+    private static final String TEST_ID = "Validate update password";
 
     @Factory(dataProvider = "testData")
     public ValidateUpdatePasswordTest(Map<String, String> testData) {
@@ -34,7 +32,7 @@ public class ValidateUpdatePasswordTest extends UpdatePasswordTest {
 
     @DataProvider(name = "testData")
     public static Iterator<Object[]> getTestData() {
-        return Environment.buildTestEnvironment(testId);
+        return Environment.buildTestEnvironment(TEST_ID);
     }
 
     @Test

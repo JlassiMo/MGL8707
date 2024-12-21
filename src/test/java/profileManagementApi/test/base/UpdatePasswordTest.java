@@ -1,14 +1,13 @@
 package profileManagementApi.test.base;
 
-import base.AbstractDataDrivenTest;
 import annotation.DependentStep;
+import base.AbstractDataDrivenTest;
 import data.TestData;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.HttpStatus;
-import utils.RestClient;
 import utils.Validate;
 
 import java.util.Map;

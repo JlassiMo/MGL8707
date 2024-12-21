@@ -186,6 +186,9 @@
                             <value>org.testng.reporters.XMLReporter</value>
                         </property>
                     </properties>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>suites/${groups}.xml</suiteXmlFile>
+                        </suiteXmlFiles>
                 </configuration>
                 <dependencies>
                     <dependency>

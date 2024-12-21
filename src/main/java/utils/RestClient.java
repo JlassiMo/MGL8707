@@ -18,7 +18,7 @@ public class RestClient extends AbstractDataDrivenTest {
     private static final String VERSION = "1.0.0";
     private static final String KEEP_ALIVE = "keep-alive";
 
-    public Response post(final String uriPath, String jwt, final String json, String context) {
+    public Response post(final String uriPath, String jwt, final String json) {
 
         Response response = given().auth().oauth2(jwt).accept(ContentType.JSON)
                 .contentType(ContentType.JSON).log().all().body(json).when()
@@ -60,7 +60,7 @@ public class RestClient extends AbstractDataDrivenTest {
         return sub.replace(templateUrl);
     }
 
-    public Response delete(final String uriPath, String jwt, String context) {
+    public Response delete(final String uriPath, String jwt) {
         Response response = given().auth().oauth2(jwt).accept(ContentType.JSON)
                 .contentType(ContentType.JSON).log().all().when()
                 .header(ACCEPT_LANGUAGE, "fr")

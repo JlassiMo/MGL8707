@@ -21,10 +21,10 @@ import java.util.Map;
 import static org.testng.Assert.fail;
 
 @Xray(requirement = "UQAM-14497")
-@Test(groups = {"integration", "nonregression"})
+@Test(groups = {"integration", "regression"})
 public class ValidateGetProfileTest extends GetProfileTest {
 
-    private static final String testId = "Validate get profile";
+    private static final String TEST_ID = "Validate get profile";
 
     @Factory(dataProvider = "testData")
     public ValidateGetProfileTest(Map<String, String> testData) {
@@ -33,7 +33,7 @@ public class ValidateGetProfileTest extends GetProfileTest {
 
     @DataProvider(name = "testData")
     public static Iterator<Object[]> getTestData() {
-        return Environment.buildTestEnvironment(testId);
+        return Environment.buildTestEnvironment(TEST_ID);
     }
 
     @Test
