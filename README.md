@@ -30,9 +30,9 @@ profile-management/
 │               ├── ApiTest.java        # Main test class for API tests
 │       
 ├── data/                    # JSON files for test data
-│   └── testdata.json        # Test data for data-driven tests
+│   └── data-manager.json    # Test data for data-driven tests
 ├── target/                  # Generated files after compilation
-└── reports/                 # Test reports generated after execution
+   └─ surfire-reports/       # Test reports generated after execution
 ```
 
 ## Prerequisites
@@ -63,10 +63,10 @@ mvn clean install
 
 ### Grouped Test Execution
 
-To execute tests by groups (e.g., smoke, regression), use the following Maven command:
+To execute tests by groups (e.g., smoke, regression) in staging-ta environment, use the following Maven command:
 
 ```bash
-mvn test -Dgroups="regression"
+mvn test -Dgroups=regression -DtestEnvironment=staging-ta
 ```
 
 You can organize your tests into various groups by using the `@Test` annotation in TestNG:
@@ -80,9 +80,9 @@ public validateGetUserProfile() {
 
 ### Data-Driven Testing with JSON
 
-This framework supports data-driven testing using external JSON files. Place your JSON data files in the `data/` directory, and they will be used to supply test data.
+This framework supports data-driven testing using external JSON files. Place your JSON data files in the `data/<environment name>` directory, and they will be used to supply test data.
 
-Example JSON (`testdata.json`):
+Example JSON (`users.json`):
 
 ```json
 [
@@ -100,31 +100,16 @@ Example JSON (`testdata.json`):
 In your test class, use the `DataProvider` from TestNG to load data from the JSON file:
 
 ```java
-@Test(dataProvider = "getUserData", dataProviderClass = DataProviderUtil.class)
-public void testGetUserProfile(Map<String, Object> testData) {
-    int userId = (int) testData.get("userId");
-    int expectedStatusCode = (int) testData.get("expectedStatusCode");
-    
-    RestAssured.given()
-        .header("Authorization", "Bearer " + accessToken)
-        .pathParam("userId", userId)
-        .when()
-        .get("/users/{userId}")
-        .then()
-        .statusCode(expectedStatusCode);
-}
-```
-
-And the `DataProviderUtil` class will handle loading the JSON data:
-
-```java
-public class DataProviderUtil {
-
-    @DataProvider(name = "getUserData")
-    public static Object[][] getUserData() {
-        return JsonFileReader.readJsonData("data/testdata.json");
+    private static final String TEST_ID = "Validate get profile";
+    @Factory(dataProvider = "testData")
+    public ValidateGetProfileTest(Map<String, String> testData) {
+        this.testData = testData;
     }
-}
+
+    @DataProvider(name = "testData")
+    public static Iterator<Object[]> getTestData() {
+        return Environment.buildTestEnvironment(TEST_ID);
+    }
 ```
 
 ### Assertion Validation
@@ -134,16 +119,12 @@ The framework uses **RestAssured** for making requests and validating responses.
 Example of validating a `GET` request:
 
 ```java
-@Test
-public void testGetUserProfile() {
-    RestAssured.given()
-        .header("Authorization", "Bearer " + accessToken)
-        .when()
-        .get("/users/1")
-        .then()
-        .statusCode(200)
-        .body("userName", equalTo("testuser1"));
-}
+        // Assert that the status code of the response is as expected
+        rawResponse.then().assertThat().statusCode(HttpStatus.OK.getCode());
+```
+```java
+         // Compare actual and expected responses field by field recursively
+        AssertionHelper.compareFieldByFieldRecursively(actualResponse, expectedResponse);
 ```
 
 ### Reports and Logging
@@ -153,7 +134,7 @@ Upon test execution, the framework generates reports under the `reports/` direct
 To generate reports:
 
 ```bash
-mvn test
+clean test -Dgroups=<group name> -DtestEnvironment=<environment name>
 ```
 
 Test results and logs will be output in the `target/surefire-reports/` folder, and you can integrate them into your CI/CD pipeline for continuous monitoring of test outcomes.
