@@ -1,10 +1,10 @@
 # MGL8707
 
-# Profile Management - API Test Automation Framework
+# API Test Automation Framework
 
 ## Overview
 
-The **Profile Management** API test automation framework is designed for efficiently testing APIs that require authentication with access tokens. Built using **RestAssured** and **TestNG**, this framework allows for automated API testing with advanced features like assertion validation, group-based test execution, secure data management, and data-driven tests with JSON files. The framework generates comprehensive reports, making it ideal for integration with CI/CD pipelines.
+The API test automation framework is designed for efficiently testing APIs. Built using **RestAssured** and **TestNG**, this framework allows for automated API testing with advanced features like assertion validation, group-based test execution, secure data management, and data-driven tests with JSON files. The framework generates comprehensive reports, making it ideal for integration with CI/CD pipelines.
 
 ## Key Features
 
