@@ -47,7 +47,6 @@ public abstract class AbstractDataDrivenTest {
         RAW_RESPONSE, ACTUAL_RESPONSE, EXPECTED_RESPONSE, ROBOT_TOKEN, TEST_DATA, CLIENT_ID, CONTEXT
     }
     // Protected getter to allow subclasses to access the RestClient
-
     public static synchronized RestClient getRestClient() {
         if (restClient == null)
             restClient = new RestClient();

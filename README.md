@@ -27,12 +27,12 @@ profile-management/
 │   └── test/
 │       └── java/
 │           └── api/
-│               ├── ApiTest.java        # Main test class for API tests
-│       
-├── data/                    # JSON files for test data
-│   └── data-manager.json    # Test data for data-driven tests
-├── target/                  # Generated files after compilation
-   └─ surfire-reports/       # Test reports generated after execution
+│               └── ApiTest.java           # Main test class for API tests
+│       └── ressources       
+│             └── data/                    # JSON files for test data
+│                   └── data-manager.json  # Test data for data-driven tests
+├── target/                                # Generated files after compilation
+   └─ surfire-reports/                     # Test reports generated after execution
 ```
 
 ## Prerequisites
@@ -58,6 +58,18 @@ Maven will automatically manage dependencies. Ensure you have Maven installed, a
 ```bash
 mvn clean install
 ```
+## Mocking Endpoints with Docker Compose
+If you need to simulate the API endpoints locally, ensure Docker Desktop is installed.
+
+1. Make sure Docker Desktop is running.
+2. Navigate to the Project Root.  
+3. Go to the directory containing your `wiremock-compose.yaml`
+4. Run
+```bash
+docker compose -f wiremock-compose.yaml up -d
+```
+This command starts the mock services in the background, allowing you to test against locally simulated endpoints.
+
 
 ## Test Execution
 
