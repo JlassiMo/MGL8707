@@ -44,29 +44,21 @@ profile-management/
 
 ## Framework Setup
 
-### 1. Clone the repository
+### - Clone the repository
 
 ```bash
 git clone https://github.com/JlassiMo/MGL8707
 cd profile-management
-```
-
-### 2. Install dependencies
-
-Maven will automatically manage dependencies. Ensure you have Maven installed, and run:
-
-```bash
-mvn clean install
 ```
 ## Mocking Endpoints with Docker Compose
 If you need to simulate the API endpoints locally, ensure Docker Desktop is installed.
 
 1. Make sure Docker Desktop is running.
 2. Navigate to the Project Root.  
-3. Go to the directory containing your `wiremock-compose.yaml`
+3. Go to the directory containing your `wiremock-docker.yaml`
 4. Run
 ```bash
-docker compose -f wiremock-compose.yaml up -d
+docker compose -f wiremock-docker.yaml up -d
 ```
 This command starts the mock services in the background, allowing you to test against locally simulated endpoints.
 
